@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="close" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title text-center>{{current_slider_index}}/{{total_slider_number}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="sharePicker()">
+        <ion-icon name="share" mode="ios" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="gallery-page">
+
+    <ion-card class="card-center">
+        
+          <ion-slides *ngIf="SliderArray" [options]="SlideOption" #Slides_banner class="slide-preview" (ionSlideDidChange)="SlideDidChange()">
+            <ion-slide *ngFor="let img of SliderArray;let i = index;">
+              <img src="{{img.img}}" class="preview-pic"/>
+            </ion-slide>
+          </ion-slides>
+          <ion-text *ngIf="!SliderArray" class="no_posts_div">No Data Found.</ion-text>
+      </ion-card>
+      
+</ion-content>
+
+<ion-footer class="gallery-footer">
+  <ion-row *ngIf="SliderArray">
+    <ion-col size="2">
+        <ion-button fill="clear" (click)="prev()">
+            <ion-icon name="arrow-back" mode="ios" color="dark"></ion-icon>
+        </ion-button>
+    </ion-col>
+    <ion-col size="8">
+        <ion-card class="card-2">
+            <ion-slides [options]="SlideOptionthumb" #Slides_banner_thumb class="slide-thumb" (ionSlideDidChange)="SlideThumbDidChange()">
+                <ion-slide *ngFor="let img of SliderArray; let i = index;" (click)="clickThumbFunction(i)">
+                  <img src="{{img.img}}" class="thumb-pic"/>
+                </ion-slide>
+              </ion-slides>
+        </ion-card>
+    </ion-col>
+    <ion-col size="2">
+        <ion-button fill="clear" (click)="next()">
+            <ion-icon name="arrow-forward" mode="ios" color="dark"></ion-icon>
+        </ion-button>
+    </ion-col>
+    </ion-row>
+</ion-footer>

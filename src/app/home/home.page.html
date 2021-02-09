@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar class="clr" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+   <img src="../assets/img/logo.png" class="logo"/>
+  </ion-toolbar>
+  <!-- <ion-toolbar class="search" text-center no-padding>
+    <ion-searchbar placeholder=""></ion-searchbar>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content class="card-background-page">
+  <div *ngFor="let post of posts;let i of index;">
+    <ion-item-divider class="bg" sticky>
+      <ion-label>
+        {{post[0].publish_time}}
+      </ion-label>
+    </ion-item-divider>
+
+    <ion-card *ngFor="let p of post" (click)="openDetails(p.post_id,p.categories[0].title)">
+
+      <img *ngIf="!p.featured_img" src="../../assets/img/noimage2.png" class="card-size" />
+      <img *ngIf="p.featured_img" [src]="p.featured_img" class="card-size"/>
+
+      <!-- <div class="card-btn">
+          {{p.categories[0].title | uppercase}}
+              
+      </div> -->
+      <!-- <ion-button class="card-text">
+                {{p.categories[0].title | uppercase}}
+              </ion-button> -->
+
+      <div class="card-subtitle">{{p.title}} </div>
+
+    </ion-card>
+  </div>
+</ion-content>
+<!-- <ion-content class="card-background-page">
+
+  <ion-card *ngFor="let c of categories">
+    <img src="../assets/img/manwatch.jpg" class="card-size"/>
+    <div class="card-btn">
+      <ion-button class="card-text" [routerLink]="[c.url]" shape="round">
+        {{c.title | uppercase}}
+      </ion-button>
+    </div>
+  </ion-card>
+
+</ion-content> -->

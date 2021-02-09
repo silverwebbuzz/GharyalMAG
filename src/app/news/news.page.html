@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar  class="clr" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <img src="../assets/img/logo.png" class="logo"/>
+  </ion-toolbar>
+  <ion-toolbar class="search" text-center no-padding>
+    <ion-searchbar placeholder=""></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+  
+  <ion-card>
+
+    <img src="../assets/img/analogwatch.jpg" class="card-size"/>
+    
+    <div class="card-title">tried calling SplashScreen.hide, but Cordova is not available. Make sure to include cordova.js</div>
+    
+    <div class="card-star">
+    <ion-button  class="btn" (click)="fav()">
+        <img src="../assets/icon/fav-icon.png" class="fav"/>
+    </ion-button>
+    </div>
+
+ <div class="card-add">
+  <b>Aug 09</b>
+  </div> 
+
+  <div class="card-time">
+    <ion-button fill="clear" (click)="sharePicker()">
+        <img src="../assets/icon/share.png" class="share"/>
+    </ion-button>
+    </div>
+
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar class="clr" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <img src="../assets/img/logo.png" class="logo" />
+  </ion-toolbar>
+  <!-- <ion-toolbar class="search" text-center no-padding>
+    <ion-searchbar placeholder=""></ion-searchbar>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <div *ngFor="let post of posts;let i of index;">
+    <ng-container *ngIf="post.length > 0">
+      <ion-item class="bg">
+        <ion-label>
+         {{post[0].publish_time}}
+        </ion-label>
+      </ion-item>
+
+      <ion-card *ngFor="let p of post" (click)="openDetails(p.post_id,p.categories[0].title)">
+
+        <img [src]="p.featured_img" class="card-size" />
+
+        <div class="card-subtitle">{{p.title}}</div>
+
+      </ion-card>
+    </ng-container>
+  </div>
+
+  <div *ngIf="!posts" class="no_posts_div">
+      <p>No Blog Found.</p>
+    </div>
+</ion-content>

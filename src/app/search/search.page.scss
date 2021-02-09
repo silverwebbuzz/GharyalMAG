@@ -1,0 +1,39 @@
+.search-model{
+    ion-list{
+        border-bottom: 1px solid;
+    }
+
+    .search{
+        padding: 5px 5px 0px 5px;
+        --color: #000;
+        border: solid 1px #000;
+        border-radius: 50px;
+        height: 35px;
+        text-align: center;
+    }
+    .close-spc{
+        text-align: center;
+
+        .btn-close{
+            margin: 0px;
+            padding: 0px;
+            border-radius: 50px;
+            background: #7d7e7e;
+            color: #fff;
+            --padding-start: 9px; 
+            --padding-end: 9px;
+            height: 40px;
+        }
+    }
+    .search-list{
+        margin: 10px;
+
+        .cat-time{
+            font-size: 15px; 
+            color: grey;
+        }
+        .cat-title{
+            font-size: 20px;
+        }
+    }
+}

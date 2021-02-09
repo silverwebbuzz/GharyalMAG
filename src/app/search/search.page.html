@@ -1,0 +1,31 @@
+<ion-content class="search-model">
+  
+  <ion-row>
+    <ion-col size="10">
+      <ion-searchbar class="search" (ionChange)="onchangesearch($event.target.value)" #searchbar></ion-searchbar>
+    </ion-col>
+    <ion-col size="2" class="close-spc">
+      <ion-button fill="clear" shape="round" class="btn-close" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <div *ngIf="posts.length > 0">
+    <ion-list *ngFor="let p of posts" class="search-list" (click)="openDetails(p.post_id,p.categories[0].title)">
+      <ion-row>
+        <ion-col size="3"> 
+          <img *ngIf="!p.featured_img" src="../../assets/img/noimage2.png" height="50px;" />
+          <img *ngIf="p.featured_img" [src]="p.featured_img" height="50px;" />
+        </ion-col>
+        <ion-col size="9">
+          <ion-row>
+            <ion-label class="cat-time">{{p.publish_time}}</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-label class="cat-title">{{p.title}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
+</ion-content>

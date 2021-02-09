@@ -1,0 +1,8 @@
+{
+  "name": "mag",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

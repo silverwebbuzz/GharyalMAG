@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar class="clr" text-center>
+      <ion-buttons slot="start">
+          <ion-button (click)="goBack()"><ion-icon color="light" name="arrow-back"></ion-icon></ion-button>
+          <!-- <ion-back-button  ></ion-back-button> -->
+      </ion-buttons>
+      <ion-title>
+        {{category_name}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content class="card-background-page">
+
+    <ion-item-divider class="bg" sticky>
+        <ion-label>
+            {{post_publish_date}}
+        </ion-label>
+      </ion-item-divider>
+
+      <ion-card (click)="openGallery(post_id)">
+          <img *ngIf="!post_featured_img" src="../../assets/img/noimage2.png" class="card-size" />
+          <img *ngIf="post_featured_img" src="{{post_featured_img}}" class="card-size" />
+      
+        </ion-card>
+
+        <div class="detail-title">
+          <ion-label>
+              {{post_title | uppercase}}
+          </ion-label>
+          <hr>
+        </div>
+
+        <div class="details">
+          <ion-text [innerHTML]="post_content" [ngStyle]="{'font-size': fontSize + 'px'}">
+          </ion-text>
+        </div>
+
+          <ion-footer class="detail-footer">
+              <ion-row>
+                <ion-col class="btn-fix">
+                  <ion-button fill="clear" class="btn" (click)="sharePicker()">
+                  Share
+                  <ion-icon name="share" mode="ios" class="share-btn"></ion-icon>
+                  </ion-button>
+                </ion-col>
+                <ion-col class="btn-fix">
+                    <ion-button *ngIf="!isFavorite" fill="clear" class="btn" (click)="addtofav(post_id)">
+                    Favorite
+                    <ion-icon name="star-outline" class="share-btn"></ion-icon>
+                    </ion-button>
+                    <ion-button *ngIf="isFavorite" fill="clear" class="btn" (click)="unFav(post_id)">
+                      Remove 
+                      <ion-icon name="star" class="share-btn"></ion-icon>
+                      </ion-button>
+                  </ion-col>
+              </ion-row>
+            </ion-footer>
+
+</ion-content>

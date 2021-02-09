@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar class="clr" text-center>
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <img src="../assets/img/logo.png" class="logo" />
+  </ion-toolbar>
+  <!-- <ion-text class="header-text">{{category_name | uppercase}}</ion-text> -->
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <div *ngFor="let post of posts;let i of index;">
+    <ion-item-divider class="bg" sticky>
+      <ion-label>
+          {{post[0].publish_time}}
+      </ion-label>
+    </ion-item-divider>
+
+    <ion-card *ngFor="let p of post" (click)="openDetails(p.post_id,p.categories[0].title)">
+
+      <img *ngIf="!p.featured_img" src="../../assets/img/noimage2.png" class="card-size" />
+      <img *ngIf="p.featured_img" [src]="p.featured_img" class="card-size"/>
+
+      <!-- <div class="card-btn">
+              <ion-button class="card-text">
+                {{p.categories[0].title | uppercase}}
+              </ion-button>
+      </div> -->
+
+      <div class="card-subtitle">{{p.title}} </div>
+
+    </ion-card>
+  </div>
+  <!-- <ion-list>
+    <ion-item-divider class="bg" sticky>
+      <ion-label>
+        20 Jan
+      </ion-label>
+    </ion-item-divider>
+    <ion-card>
+      <img src="../assets/img/manwatch.jpg" class="card-size" />
+      <div class="card-subtitle">tried calling SplashScreen.hide, but Cordova is not available. Make sure to include
+        cordova.js</div>
+    </ion-card>
+    <ion-card>
+      <img src="../assets/img/manwatch.jpg" class="card-size" />
+      <div class="card-subtitle">tried calling SplashScreen.hide, but Cordova is not available. Make sure to include
+        cordova.js</div>
+    </ion-card>
+    <ion-card>
+      <img src="../assets/img/manwatch.jpg" class="card-size" />
+      <div class="card-subtitle">tried calling SplashScreen.hide, but Cordova is not available. Make sure to include
+        cordova.js</div>
+    </ion-card>
+    <ion-item-divider class="bg" sticky>
+      <ion-label>
+        21 Jan
+      </ion-label>
+    </ion-item-divider>
+    <ion-card>
+      <img src="../assets/img/manwatch.jpg" class="card-size" />
+      <div class="card-subtitle">tried calling SplashScreen.hide, but Cordova is not available. Make sure to include
+        cordova.js</div>
+    </ion-card>
+    <ion-card>
+      <img src="../assets/img/manwatch.jpg" class="card-size" />
+      <div class="card-subtitle">tried calling SplashScreen.hide, but Cordova is not available. Make sure to include
+        cordova.js</div>
+    </ion-card>
+    <ion-card>
+      <img src="../assets/img/manwatch.jpg" class="card-size" />
+      <div class="card-subtitle">tried calling SplashScreen.hide, but Cordova is not available. Make sure to include
+        cordova.js</div>
+    </ion-card>
+  </ion-list> -->
+
+
+
+</ion-content>
+
+<!-- <ion-content class="card-background-page">
+  
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+          </ion-refresher-content>
+      </ion-refresher>
+
+  <ion-card>
+
+    <img src="../assets/img/manwatch.jpg" class="card-size" />
+
+    <div class="card-title">tried calling SplashScreen.hide, but Cordova is not available. Make sure to include
+      cordova.js</div>
+
+    <div class="card-star">
+      <ion-button class="btn">
+        <img src="../assets/icon/hand-copy.png" class="fav" />
+      </ion-button>
+    </div>
+
+    <div class="card-add">
+      <b>Jan 20</b>
+    </div>
+
+    <div class="card-time">
+      <ion-button fill="clear" (click)="sharePicker()">
+          <img src="../assets/icon/share.png" class="share"/>
+      </ion-button>
+      </div>
+
+  </ion-card>
+
+</ion-content> -->

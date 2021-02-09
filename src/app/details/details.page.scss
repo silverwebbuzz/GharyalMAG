@@ -1,0 +1,48 @@
+.title-ios{
+    text-align: center;
+    left: -10px;
+}
+
+.detail-title{
+    text-align: center;
+    margin: 10px;
+    font-size: 24px;
+    hr{
+        border-bottom: solid 2px;
+        width: 50%;
+    }
+}
+
+.details{
+    font-size: 12px; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+    margin-bottom: 10px;
+    text-align: center;
+    ion-text{
+        line-height: 1.4;
+        color: #333;
+    }
+}
+// ion-text{
+//     line-height: 20px;
+    
+// }
+
+.detail-footer{
+
+    .btn-fix{
+        border:gray solid 1px;         
+        text-align: center;
+        padding: 0px;
+        .btn{
+            color: black;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .share-btn{
+            margin-left: 5px;
+        }
+    }
+
+}

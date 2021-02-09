@@ -1,0 +1,33 @@
+.page-setting{
+
+    .text-label{
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        font-size: 25px;
+        margin-top: 25px;
+    }
+    .text-card{
+        box-shadow: 0px 0px 0px 0px;
+        margin: 0px;
+        height: 100px;
+        margin-top: 40px;
+        //margin-bottom: 25px;
+        padding: 0px 20px 0px 20px;
+
+    .text-test{
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+    }
+}
+    .btn-item{
+        border: 1px solid #ccc; 
+        margin-top: 25px;
+
+        .btn{
+            width:100%;
+            color: #000;
+        }
+    }
+}
